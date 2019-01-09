@@ -1,0 +1,3 @@
+MyAssetsIOS/BuildConfig/*.xcconfig
+MyAssetsIOS/env-vars.sh
+#MyAssetsIOS/Generated/AppSecrets.generated.swift
