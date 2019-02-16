@@ -156,7 +156,7 @@ class TimePositionService{
                             return TimePosition(json: timePosition as! [String: Any] )!
                         })
                         
-                        sucesso(timePositions.last!)
+                        sucesso(timePositions.sorted(by: { $0.createdTimestamp < $1.createdTimestamp }).last!)
                     }
                     catch{
                         print(error.localizedDescription)

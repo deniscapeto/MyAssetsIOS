@@ -61,6 +61,7 @@ class NewAssetPositionViewController: UIViewController , UITableViewDataSource {
     @IBAction func adicionarTimePosition(){
                 
         _ = TimePositionService().SendToAWSApiAgateway(timePosition: self.timePosition!)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func adicionarAssetPosition(){
@@ -84,7 +85,11 @@ class NewAssetPositionViewController: UIViewController , UITableViewDataSource {
         self.tableView?.reloadData()
     }
 
-    
+    @IBAction func cancelAdd(){
+        
+        dismiss(animated: true, completion: nil)
+        
+    }
 
 
     @objc
