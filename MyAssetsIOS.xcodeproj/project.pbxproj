@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A22F6FE4221B86EF0014A1A7 /* AddTimeAssetPositionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22F6FE3221B86EF0014A1A7 /* AddTimeAssetPositionDelegate.swift */; };
 		A23F317A21E62E5E0070ECDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F317921E62E5E0070ECDB /* AppDelegate.swift */; };
 		A23F317C21E62E5E0070ECDB /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F317B21E62E5E0070ECDB /* SummaryViewController.swift */; };
 		A23F317E21E62E5E0070ECDB /* NewAssetPositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F317D21E62E5E0070ECDB /* NewAssetPositionViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A22F6FE3221B86EF0014A1A7 /* AddTimeAssetPositionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimeAssetPositionDelegate.swift; sourceTree = "<group>"; };
 		A23F317621E62E5E0070ECDB /* MyAssetsIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAssetsIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A23F317921E62E5E0070ECDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A23F317B21E62E5E0070ECDB /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SummaryViewController.swift; path = MyAssetsIOS/Views/SummaryViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -95,6 +97,7 @@
 				A23F318E21E77A820070ECDB /* TimePositionService.swift */,
 				A23F319021E77B010070ECDB /* AssetPosition.swift */,
 				A23F319821EFF1E80070ECDB /* TimePosition.swift */,
+				A22F6FE3221B86EF0014A1A7 /* AddTimeAssetPositionDelegate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				A2D2D6B622073C5B00291954 /* AppSecrets.generated.swift in Sources */,
 				A2D2D6B822075BDD00291954 /* HMACSHA.swift in Sources */,
 				A23F317A21E62E5E0070ECDB /* AppDelegate.swift in Sources */,
+				A22F6FE4221B86EF0014A1A7 /* AddTimeAssetPositionDelegate.swift in Sources */,
 				A23F319421E7AC220070ECDB /* HistoryTableViewController.swift in Sources */,
 				A23F319121E77B010070ECDB /* AssetPosition.swift in Sources */,
 				A23F318F21E77A820070ECDB /* TimePositionService.swift in Sources */,

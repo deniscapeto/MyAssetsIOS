@@ -9,7 +9,8 @@
 import UIKit
 import Foundation
 
-class SummaryViewController: UIViewController, UITableViewDataSource {
+class SummaryViewController: UIViewController, UITableViewDataSource, AddNewTimeAssetPositionDelegate {
+
     
     @IBOutlet var tableView:UITableView?
     @IBOutlet var totalAmountLabel:UILabel?
@@ -74,32 +75,54 @@ class SummaryViewController: UIViewController, UITableViewDataSource {
         self.refreshControl?.endRefreshing()
     }
     
+    fileprivate func loadScreenWith(_ timePosition: (TimePosition)) {
+        self.assetPositions = timePosition.assetPositions
+        
+        self.agrupamento = Dictionary(grouping: self.assetPositions, by: {  $0.custodian ?? "NaoInformado" })
+        
+        var total:Double = 0
+        for custodiante in self.agrupamento {
+            for asset in custodiante.value{
+                total = total + asset.amount
+            }
+        }
+        
+        print(self.agrupamento.count)
+        
+        DispatchQueue.main.async {
+            self.tableView?.reloadData()
+            self.totalAmountLabel?.text = "R$ \(String(total))"//"R$ 298.249,87"
+            self.timePositionDateLabel?.text = String(timePosition.date.prefix(10))
+        }
+    }
+    
     func loadAssetPositions(){
+        
         TimePositionService().GetLastTimePosition(sucesso: { (timePosition) in
             
             
-            self.assetPositions = timePosition.assetPositions
-            
-            self.agrupamento = Dictionary(grouping: self.assetPositions, by: {  $0.custodian ?? "NaoInformado" })
-            
-            var total:Double = 0
-            for custodiante in self.agrupamento {
-                for asset in custodiante.value{
-                    total = total + asset.amount
-                }
-            }
-            
-            print(self.agrupamento.count)
-            
-            DispatchQueue.main.async {
-                self.tableView?.reloadData()
-                self.totalAmountLabel?.text = "R$ \(String(total))"//"R$ 298.249,87"
-                self.timePositionDateLabel?.text = String(timePosition.date.prefix(10))
-            }
+            self.loadScreenWith(timePosition)
             
         }){ (erro) in
             print(erro.localizedDescription)
         }
     }
+    
+    @IBAction func loadNewTimeAssetPositionView(){
+        
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewAssetPositionViewController") as? NewAssetPositionViewController {
+            //viewController. = newsObj
+            if let navigator = navigationController {
+                viewController.delegate = self
+                navigator.present(viewController, animated: true, completion: nil)
+                
+            }
+        }
+    }
+    
+    func add(_ timePosition: TimePosition) {
+        loadScreenWith(timePosition)
+    }
+    
 }
 
