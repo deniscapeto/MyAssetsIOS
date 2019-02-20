@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		622FD3E57600838A5ADD2CAD /* Pods_MyAssetsIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DB3688294BC42EB653AC6C /* Pods_MyAssetsIOS.framework */; };
 		A22F6FE4221B86EF0014A1A7 /* AddTimeAssetPositionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22F6FE3221B86EF0014A1A7 /* AddTimeAssetPositionDelegate.swift */; };
 		A23F317A21E62E5E0070ECDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F317921E62E5E0070ECDB /* AppDelegate.swift */; };
 		A23F317C21E62E5E0070ECDB /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F317B21E62E5E0070ECDB /* SummaryViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A21E373742CB2E177B26C172 /* Pods-MyAssetsIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyAssetsIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyAssetsIOS/Pods-MyAssetsIOS.release.xcconfig"; sourceTree = "<group>"; };
 		A22F6FE3221B86EF0014A1A7 /* AddTimeAssetPositionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimeAssetPositionDelegate.swift; sourceTree = "<group>"; };
 		A23F317621E62E5E0070ECDB /* MyAssetsIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAssetsIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A23F317921E62E5E0070ECDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,8 @@
 		A2D2D6B722075BDD00291954 /* HMACSHA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMACSHA.swift; sourceTree = "<group>"; };
 		A2D2D6B922075D2600291954 /* MyAssetsIOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyAssetsIOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		A2D2D6BA22075D2700291954 /* HMACSHA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMACSHA.m; sourceTree = "<group>"; };
+		A5DB3688294BC42EB653AC6C /* Pods_MyAssetsIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyAssetsIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7CB4522C513EA00F2480D7A /* Pods-MyAssetsIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyAssetsIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyAssetsIOS/Pods-MyAssetsIOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,17 +56,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				622FD3E57600838A5ADD2CAD /* Pods_MyAssetsIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16A1156EF560EAEF4DB4D6F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A5DB3688294BC42EB653AC6C /* Pods_MyAssetsIOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		775883B2C7CA16C8009E402E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B7CB4522C513EA00F2480D7A /* Pods-MyAssetsIOS.debug.xcconfig */,
+				A21E373742CB2E177B26C172 /* Pods-MyAssetsIOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A23F316D21E62E5E0070ECDB = {
 			isa = PBXGroup;
 			children = (
 				A23F317821E62E5E0070ECDB /* MyAssetsIOS */,
 				A23F317721E62E5E0070ECDB /* Products */,
+				775883B2C7CA16C8009E402E /* Pods */,
+				16A1156EF560EAEF4DB4D6F8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,6 +170,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A23F318A21E62E5E0070ECDB /* Build configuration list for PBXNativeTarget "MyAssetsIOS" */;
 			buildPhases = (
+				BE5BAF09029FF2CCDABB4585 /* [CP] Check Pods Manifest.lock */,
 				A23F317221E62E5E0070ECDB /* Sources */,
 				A23F317321E62E5E0070ECDB /* Frameworks */,
 				A23F317421E62E5E0070ECDB /* Resources */,
@@ -224,6 +249,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ -f MyAssetsIOS/env-vars.sh ]; then\n    echo 'Exporting vars'\n    source MyAssetsIOS/env-vars.sh\nelse\n    echo 'file env-vars.sh not found'\nfi\n\n#ls MyAssetsIOS\n\necho \"SECRET_KEY value: \" $SECRET_KEY\necho \"gatewayApiUrl: \" $gatewayApiUrl\necho \"authAddTimePosition: \" \\\"$authAddTimePosition\\\"\necho \"authGetPositions: \" $authGetPositions\n#\\\"$SECRET_KEY\\\"\n#sourcery --sources . --templates MyAssetsIOS/Templates/AppSecrets.stencil --output MyAssetsIOS/Generated --args secretKey=/\"$SECRET_KEY\"/\nsourcery --sources . --templates MyAssetsIOS/Templates/AppSecrets.stencil --output MyAssetsIOS/Generated --args secretKey=\\\"$SECRETO_KEY\\\",gatewayApiUrl=\\\"$gatewayApiUrl\\\",authSignatureAddTimePosition=\\\"$authSignatureAddTimePosition\\\",authSignatureGetPositions=\\\"$authSignatureGetPositions\\\",authAWSCredential=\\\"$authAWSCredential\\\"\n\necho \"fim execucao sourcery\"\n\n\n";
+		};
+		BE5BAF09029FF2CCDABB4585 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyAssetsIOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -387,6 +434,7 @@
 		};
 		A23F318B21E62E5E0070ECDB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7CB4522C513EA00F2480D7A /* Pods-MyAssetsIOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -408,6 +456,7 @@
 		};
 		A23F318C21E62E5E0070ECDB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A21E373742CB2E177B26C172 /* Pods-MyAssetsIOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
