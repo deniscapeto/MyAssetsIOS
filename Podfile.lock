@@ -1,16 +1,22 @@
 PODS:
+  - Charts (3.2.2):
+    - Charts/Core (= 3.2.2)
+  - Charts/Core (3.2.2)
   - Sourcery (0.15.0)
 
 DEPENDENCIES:
+  - Charts
   - Sourcery
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Charts
     - Sourcery
 
 SPEC CHECKSUMS:
+  Charts: f69cf0518b6d1d62608ca504248f1bbe0b6ae77e
   Sourcery: 5895672cae353cdbfa95f3f4aaeb75a664d76f6a
 
-PODFILE CHECKSUM: 790bacfa56bb65cb88beae5ee23029eefd43b164
+PODFILE CHECKSUM: 41de89089a104577de256657bccd01568464eac2
 
 COCOAPODS: 1.5.3

@@ -78,7 +78,7 @@ class TimePositionService{
         }
     }
     
-    func GetAssetPositionAddHistory(sucesso: @escaping(_ assetPositions:Array<TimePosition>) -> Void, falha: @escaping(_ error:Error) -> Void)
+    func GetAssetPositionHistory(sucesso: @escaping(_ assetPositions:Array<TimePosition>) -> Void, falha: @escaping(_ error:Error) -> Void)
     {
         
         let headers = [

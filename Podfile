@@ -8,5 +8,6 @@ target 'MyAssetsIOS' do
   # Pods for MyAssetsIOS
 
 pod 'Sourcery'
+pod 'Charts'
 
 end

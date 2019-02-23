@@ -29,7 +29,7 @@ class HistoryTableViewController: UITableViewController {
     }
     
     func loadAssetPositions(){
-        TimePositionService().GetAssetPositionAddHistory(sucesso: { (dicionario) in
+        TimePositionService().GetAssetPositionHistory(sucesso: { (dicionario) in
             self.timePositions = dicionario        
             
             DispatchQueue.main.async {
