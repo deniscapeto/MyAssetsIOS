@@ -282,44 +282,93 @@
             </objects>
             <point key="canvasLocation" x="-337" y="394"/>
         </scene>
-        <!--Graphs-->
+        <!--Charts-->
         <scene sceneID="zEx-Gg-rIt">
             <objects>
-                <viewController id="lVY-p8-MCV" customClass="GraphsViewController" customModule="MyAssetsIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lVY-p8-MCV" customClass="ChartsViewController" customModule="MyAssetsIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WQ3-5L-Ykr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kPc-t9-sTC" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="8" y="72" width="359" height="262"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D3u-KJ-Ada" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="8" y="342" width="359" height="264"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FIF-HS-f5r">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAe-I3-qf9">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assets Growth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rM8-ZN-jd1">
+                                                <rect key="frame" x="8" y="8" width="359" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D3u-KJ-Ada" customClass="BarChartView" customModule="Charts">
+                                                <rect key="frame" x="16" y="52" width="351" height="240"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allocation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3n-f7-vGD">
+                                                <rect key="frame" x="8" y="300" width="359" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ORD-mf-SMh" customClass="PieChartView" customModule="Charts">
+                                                <rect key="frame" x="16" y="329" width="351" height="269"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="w3n-f7-vGD" firstAttribute="top" secondItem="D3u-KJ-Ada" secondAttribute="bottom" constant="8" id="8Mg-Pb-Jnk"/>
+                                            <constraint firstAttribute="bottom" secondItem="D3u-KJ-Ada" secondAttribute="bottom" constant="708" id="8uR-UL-E3W"/>
+                                            <constraint firstItem="w3n-f7-vGD" firstAttribute="leading" secondItem="RAe-I3-qf9" secondAttribute="leading" constant="8" id="96g-jn-fbG"/>
+                                            <constraint firstAttribute="trailing" secondItem="rM8-ZN-jd1" secondAttribute="trailing" constant="8" id="9cV-bF-KaW"/>
+                                            <constraint firstAttribute="trailing" secondItem="D3u-KJ-Ada" secondAttribute="trailing" id="BCy-5D-4q5"/>
+                                            <constraint firstItem="D3u-KJ-Ada" firstAttribute="leading" secondItem="RAe-I3-qf9" secondAttribute="leading" constant="8" id="J4u-od-J3d"/>
+                                            <constraint firstAttribute="trailing" secondItem="w3n-f7-vGD" secondAttribute="trailing" constant="8" id="JmU-3z-WE1"/>
+                                            <constraint firstAttribute="trailing" secondItem="D3u-KJ-Ada" secondAttribute="trailing" constant="8" id="K3W-WN-gOx"/>
+                                            <constraint firstItem="D3u-KJ-Ada" firstAttribute="leading" secondItem="RAe-I3-qf9" secondAttribute="leading" constant="16" id="N9D-iL-l1F"/>
+                                            <constraint firstItem="D3u-KJ-Ada" firstAttribute="top" secondItem="rM8-ZN-jd1" secondAttribute="bottom" constant="8" id="OMm-7H-wbr"/>
+                                            <constraint firstItem="rM8-ZN-jd1" firstAttribute="top" secondItem="RAe-I3-qf9" secondAttribute="top" constant="8" id="QLs-n1-gsu"/>
+                                            <constraint firstItem="D3u-KJ-Ada" firstAttribute="top" secondItem="rM8-ZN-jd1" secondAttribute="bottom" constant="23" id="cfL-rp-VYl"/>
+                                            <constraint firstItem="rM8-ZN-jd1" firstAttribute="leading" secondItem="RAe-I3-qf9" secondAttribute="leading" constant="8" id="fbL-wf-Msv"/>
+                                            <constraint firstAttribute="height" constant="1000" id="uqm-ee-vvF"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="RAe-I3-qf9" firstAttribute="top" secondItem="FIF-HS-f5r" secondAttribute="top" id="6M8-dO-xGL"/>
+                                    <constraint firstAttribute="trailing" secondItem="RAe-I3-qf9" secondAttribute="trailing" id="J7P-W9-HI3"/>
+                                    <constraint firstItem="RAe-I3-qf9" firstAttribute="centerX" secondItem="FIF-HS-f5r" secondAttribute="centerX" id="MPw-GQ-qUr"/>
+                                    <constraint firstAttribute="bottom" secondItem="RAe-I3-qf9" secondAttribute="bottom" constant="-64" id="OGI-Qg-jgB"/>
+                                    <constraint firstItem="RAe-I3-qf9" firstAttribute="leading" secondItem="FIF-HS-f5r" secondAttribute="leading" id="ZgM-Mr-jsl"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="D3u-KJ-Ada" firstAttribute="top" secondItem="kPc-t9-sTC" secondAttribute="bottom" constant="8" id="BwQ-wd-XZc"/>
-                            <constraint firstItem="kPc-t9-sTC" firstAttribute="leading" secondItem="QzH-YA-3qD" secondAttribute="leading" constant="8" id="I3A-P1-maH"/>
-                            <constraint firstItem="QzH-YA-3qD" firstAttribute="trailing" secondItem="kPc-t9-sTC" secondAttribute="trailing" constant="8" id="LCu-yf-H4D"/>
-                            <constraint firstItem="D3u-KJ-Ada" firstAttribute="leading" secondItem="QzH-YA-3qD" secondAttribute="leading" constant="8" id="Mru-Ox-Bmk"/>
-                            <constraint firstItem="QzH-YA-3qD" firstAttribute="trailing" secondItem="D3u-KJ-Ada" secondAttribute="trailing" constant="8" id="fYV-kE-iqH"/>
-                            <constraint firstItem="QzH-YA-3qD" firstAttribute="bottom" secondItem="D3u-KJ-Ada" secondAttribute="bottom" constant="8" id="jJV-xj-WVW"/>
-                            <constraint firstItem="kPc-t9-sTC" firstAttribute="top" secondItem="QzH-YA-3qD" secondAttribute="top" constant="8" id="lV3-56-xqG"/>
+                            <constraint firstItem="FIF-HS-f5r" firstAttribute="top" secondItem="WQ3-5L-Ykr" secondAttribute="top" id="GQg-FX-tt5"/>
+                            <constraint firstAttribute="trailing" secondItem="FIF-HS-f5r" secondAttribute="trailing" id="Qx2-w7-tpK"/>
+                            <constraint firstItem="FIF-HS-f5r" firstAttribute="top" secondItem="WQ3-5L-Ykr" secondAttribute="top" id="ieL-gM-HUZ"/>
+                            <constraint firstItem="QzH-YA-3qD" firstAttribute="bottom" secondItem="FIF-HS-f5r" secondAttribute="bottom" constant="-49" id="nKC-Lw-y9M"/>
+                            <constraint firstItem="FIF-HS-f5r" firstAttribute="leading" secondItem="QzH-YA-3qD" secondAttribute="leading" id="qI2-55-MGZ"/>
+                            <constraint firstItem="FIF-HS-f5r" firstAttribute="trailing" secondItem="QzH-YA-3qD" secondAttribute="trailing" id="wZZ-qj-K68"/>
+                            <constraint firstItem="FIF-HS-f5r" firstAttribute="leading" secondItem="WQ3-5L-Ykr" secondAttribute="leading" id="wg7-vj-w2D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QzH-YA-3qD"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Graphs" id="b5w-bR-ela"/>
+                    <navigationItem key="navigationItem" title="Charts" id="b5w-bR-ela"/>
+                    <size key="freeformSize" width="375" height="1000"/>
                     <connections>
+                        <outlet property="allocationChartView" destination="ORD-mf-SMh" id="NhF-W5-co7"/>
                         <outlet property="barChartView" destination="D3u-KJ-Ada" id="08n-9w-Ee0"/>
-                        <outlet property="lineChartView" destination="kPc-t9-sTC" id="hBZ-CQ-gD7"/>
+                        <outlet property="scrollView" destination="FIF-HS-f5r" id="Lup-ei-wYO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FaG-Xm-UyW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="724" y="1204.9475262368817"/>
+            <point key="canvasLocation" x="717.60000000000002" y="1354.7226386806599"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HTV-45-geL">
@@ -360,11 +409,11 @@
             </objects>
             <point key="canvasLocation" x="953" y="-172"/>
         </scene>
-        <!--Graphs-->
+        <!--Charts-->
         <scene sceneID="Ket-Mq-sOE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kiW-JO-gMx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Graphs" image="growth_32x32" id="jFd-Mh-XDn"/>
+                    <tabBarItem key="tabBarItem" title="Charts" image="growth_32x32" id="jFd-Mh-XDn"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JGW-n0-hAh">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

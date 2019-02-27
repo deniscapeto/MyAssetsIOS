@@ -14,10 +14,6 @@ class TimePosition {
     let createdTimestamp: String
     var assetPositions: [AssetPosition]
     
-    func addAssetPosition(_ assetPosition:AssetPosition) {
-        self.assetPositions.append(assetPosition)
-    }
-    
     init(id: Int, date: String, createdTimestamp: String, assetPositions: [AssetPosition]) {
         self.id = id
         self.date = date
@@ -37,8 +33,40 @@ class TimePosition {
         self.assetPositions = jsonAsset.map({(asset) -> AssetPosition in
             return AssetPosition(json: asset)!
         })
+    }
+    
+    func addAssetPosition(_ assetPosition:AssetPosition) {
+        self.assetPositions.append(assetPosition)
+    }
+    
+    var totalAmount:Double{
+        var total:Double = 0
+        for custodiante in self.custodians {
+            for asset in custodiante.value{
+                total = total + asset.amount
+            }
+        }
+        return total
+    }
+    
+    var custodians: Dictionary<String, Array<AssetPosition>>{
+        return  Dictionary(grouping: self.assetPositions, by: {  $0.custodian ?? "NaoInformado" })
+    }
+    
+    var custodiansTotalAmount: Dictionary<String, Double>{
         
+        var custodiansTotalAmount:Dictionary<String, Double> = Dictionary<String, Double>()
         
+        for custodian in self.custodians {
+            var total:Double = 0
+            for asset in custodian.value{
+                total = total + asset.amount
+            }
+            
+            custodiansTotalAmount[custodian.key] = total
+            
+        }
+        return custodiansTotalAmount
     }
     
 }

@@ -78,20 +78,13 @@ class SummaryViewController: UIViewController, UITableViewDataSource, AddNewTime
     fileprivate func loadScreenWith(_ timePosition: (TimePosition)) {
         self.assetPositions = timePosition.assetPositions
         
-        self.agrupamento = Dictionary(grouping: self.assetPositions, by: {  $0.custodian ?? "NaoInformado" })
-        
-        var total:Double = 0
-        for custodiante in self.agrupamento {
-            for asset in custodiante.value{
-                total = total + asset.amount
-            }
-        }
+        self.agrupamento = timePosition.custodians
         
         print(self.agrupamento.count)
         
         DispatchQueue.main.async {
             self.tableView?.reloadData()
-            self.totalAmountLabel?.text = "R$ \(String(total))"//"R$ 298.249,87"
+            self.totalAmountLabel?.text = "R$ \(String(timePosition.totalAmount))"
             self.timePositionDateLabel?.text = String(timePosition.date.prefix(10))
         }
     }
