@@ -25,6 +25,7 @@
 		A2D2D6B822075BDD00291954 /* HMACSHA.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D2D6B722075BDD00291954 /* HMACSHA.swift */; };
 		A2D2D6BB22075D2700291954 /* HMACSHA.m in Sources */ = {isa = PBXBuildFile; fileRef = A2D2D6BA22075D2700291954 /* HMACSHA.m */; };
 		A2F043DD2220C58B00ACDE8A /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F043DC2220C58B00ACDE8A /* ChartsViewController.swift */; };
+		A2F043E1223714D500ACDE8A /* ChartXAxisFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F043E0223714D500ACDE8A /* ChartXAxisFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		A2D2D6B922075D2600291954 /* MyAssetsIOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyAssetsIOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		A2D2D6BA22075D2700291954 /* HMACSHA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMACSHA.m; sourceTree = "<group>"; };
 		A2F043DC2220C58B00ACDE8A /* ChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
+		A2F043E0223714D500ACDE8A /* ChartXAxisFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartXAxisFormatter.swift; sourceTree = "<group>"; };
 		A5DB3688294BC42EB653AC6C /* Pods_MyAssetsIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyAssetsIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7CB4522C513EA00F2480D7A /* Pods-MyAssetsIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyAssetsIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyAssetsIOS/Pods-MyAssetsIOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +150,7 @@
 				A2D2D6B722075BDD00291954 /* HMACSHA.swift */,
 				A2D2D6BA22075D2700291954 /* HMACSHA.m */,
 				A2D2D6B922075D2600291954 /* MyAssetsIOS-Bridging-Header.h */,
+				A2F043E0223714D500ACDE8A /* ChartXAxisFormatter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				A2F043DD2220C58B00ACDE8A /* ChartsViewController.swift in Sources */,
 				A23F317A21E62E5E0070ECDB /* AppDelegate.swift in Sources */,
 				A22F6FE4221B86EF0014A1A7 /* AddTimeAssetPositionDelegate.swift in Sources */,
+				A2F043E1223714D500ACDE8A /* ChartXAxisFormatter.swift in Sources */,
 				A23F319421E7AC220070ECDB /* HistoryTableViewController.swift in Sources */,
 				A23F319121E77B010070ECDB /* AssetPosition.swift in Sources */,
 				A23F318F21E77A820070ECDB /* TimePositionService.swift in Sources */,

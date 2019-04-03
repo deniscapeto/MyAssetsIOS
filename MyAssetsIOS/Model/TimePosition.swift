@@ -10,7 +10,7 @@ import Foundation
 
 class TimePosition {
     let id: Int
-    let date: String
+    var date: String
     let createdTimestamp: String
     var assetPositions: [AssetPosition]
     

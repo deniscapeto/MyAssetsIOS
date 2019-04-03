@@ -12,15 +12,8 @@ class NewAssetPositionViewController: UIViewController , UITableViewDataSource {
     
     var delegate:AddNewTimeAssetPositionDelegate?
     
-   // init(delegate: AddNewTimeAssetPositionDelegate) {
-       // self.delegate = delegate
-   //     super.init(nibName: "AddNewTimeAssetPositionDelegate", bundle: nil)
-   // }
-    
     required init?(coder aDecoder: NSCoder) {
-       // self.delegate = nil
         super.init(coder: aDecoder)
-        //tabBarItem = UITabBarItem(title: "Add", image: UIImage(named: "add_32x32"), tag: 3)
     }
     
     @IBOutlet var dateTextField:UITextField?
@@ -33,7 +26,6 @@ class NewAssetPositionViewController: UIViewController , UITableViewDataSource {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        //self.tableView = UITableView()
         self.tableView?.dataSource = self
         self.view.addSubview(tableView!)
         
@@ -78,7 +70,7 @@ class NewAssetPositionViewController: UIViewController , UITableViewDataSource {
             print("nao captou")
             return
         }
-        let valor = amaountTextField!.text!
+        let valor = amaountTextField!.text!.replacingOccurrences(of: ",", with: ".")
         let descricaoDoAtivo = assetTextField!.text!
         let custodiante = custodianTextField!.text!
         
@@ -103,6 +95,7 @@ class NewAssetPositionViewController: UIViewController , UITableViewDataSource {
     @objc
     func updateDateField(sender: UIDatePicker) {
         dateTextField?.text = formatDateForDisplay(date: sender.date)
+        self.timePosition?.date = (dateTextField?.text)!
     }
     
     func formatDateForDisplay(date: Date) -> String {

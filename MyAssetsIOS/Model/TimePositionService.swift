@@ -107,7 +107,7 @@ class TimePositionService{
                         timePositions = lista.map({(timePosition) -> TimePosition in
                             return TimePosition(json: timePosition as! [String: Any] )!
                         })
-                        let orderedList = timePositions.sorted(by: { $0.createdTimestamp > $1.createdTimestamp })
+                        let orderedList = timePositions.sorted(by: { $0.date > $1.date })
                         sucesso(orderedList)
                     }
                     catch{
@@ -156,7 +156,7 @@ class TimePositionService{
                             return TimePosition(json: timePosition as! [String: Any] )!
                         })
                         
-                        sucesso(timePositions.sorted(by: { $0.createdTimestamp < $1.createdTimestamp }).last!)
+                        sucesso(timePositions.sorted(by: { $0.date < $1.date }).last!)
                     }
                     catch{
                         print(error.localizedDescription)

@@ -42,22 +42,53 @@ class ChartsViewController : UIViewController {
             
             var xIndex:Double=1
             
-            for item in dicionario {
+            var labelLinhas: [Double:String] = [Double:String]()
+            
+            var orderedDic = dicionario
+            orderedDic.reverse()
+            for item in orderedDic {
                 var total:Double = 0
                 
                 item.assetPositions.forEach{asset in
                     total += asset.amount
                 }
                 
+                
+                let beginOfSentence = item.date.firstIndex(of: "-")!
+                let endOfSentence = item.date.lastIndex(of: "-")!
+                
+                let tokens = item.date.components(separatedBy: "-")
+                
+                let firstSentence = item.date[beginOfSentence...endOfSentence]
+                
+                let monthName = DateFormatter().shortMonthSymbols![Int(tokens[1])! - 1]
+                
+                labelLinhas[xIndex] = String("\(tokens[2].prefix(2))\\\(monthName)")
+                
                 let p2 = BarChartDataEntry(x: xIndex, y: total)
+                
                 lista.append(p2)
                 xIndex += 1
             }
             
+            
             let set = BarChartDataSet(values: lista, label: "$ Amount")
+            
             let data = BarChartData(dataSet: set)
             
+            let formato:ChartXAxisFormatter = ChartXAxisFormatter(stringValues: labelLinhas)
+            self.barChartView.xAxis.valueFormatter = formato
+            self.barChartView.xAxis.spaceMin = 0
+            self.barChartView.xAxis.spaceMax = 0
+            self.barChartView.xAxis.axisRange = Double(orderedDic.count)
+            self.barChartView.xAxis.granularity = 1
+            self.barChartView.xAxis.granularityEnabled = true
+            self.barChartView.xAxis.axisMaximum = Double(orderedDic.count)
+            self.barChartView.xAxis.axisMinimum = 1
+            self.barChartView.xAxis.labelPosition = Charts.XAxis.LabelPosition.bottom
+            
             DispatchQueue.main.async {
+    
                 self.barChartView.data = data
             }
             
